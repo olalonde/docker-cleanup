@@ -76,8 +76,8 @@ do
     if [ $DEBUG ]; then echo DEBUG: Starting loop; fi
 
     # Cleanup unused volumes
-    echo "=> Removing unused volumes"
-    /docker-cleanup-volumes.sh
+    # echo "=> Removing unused volumes"
+    # /docker-cleanup-volumes.sh
 
     IFS='
  '
