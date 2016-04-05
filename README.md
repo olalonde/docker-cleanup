@@ -3,9 +3,9 @@ This image will periodically clean up exited containers and remove images and vo
 running container. Based on [tutumcloud/image-cleanup](https://github.com/tutumcloud/image-cleanup) and
 [chadoe/docker-cleanup-volumes](https://github.com/chadoe/docker-cleanup-volumes) with some small fixes.
 
-**WARNING: This script will remove all exited containers, data-only containers and unused images unless you 
-carefully exclude them. Take care if you mount /var/lib/docker into the container since that will clean 
-up all unused data volumes. If it's not compatible with your system or Docker version it may delete 
+**WARNING: This script will remove all exited containers, data-only containers and unused images unless you
+carefully exclude them. Take care if you mount /var/lib/docker into the container since that will clean
+up all unused data volumes. If it's not compatible with your system or Docker version it may delete
 all your volumes, even from under running containers.**
 
 Normally any Docker containers that exit are still kept on disk until *docker rm -v* is used to clean
@@ -43,8 +43,8 @@ However it will not match
  * :tag
  * [[:alpha:]]:tag
 
-By default, both are set to **\*\*None\*\*** which is the same as the blank string.  If you want to keep ALL images or containers, effectively disabling this 
-part of the cleanup, then you should use **\*:\*** to match all images.  Do not 
+By default, both are set to **\*\*None\*\*** which is the same as the blank string.  If you want to keep ALL images or containers, effectively disabling this
+part of the cleanup, then you should use **\*:\*** to match all images.  Do not
 use a bare **\*** as this will be taken as a filename match.
 
 ## Deployment
@@ -69,7 +69,7 @@ Requires=docker.service
 WantedBy=multi-user.target
 
 [Service]
-Environment=IMAGE=meltwater/docker-cleanup:latest NAME=docker-cleanup
+Environment=IMAGE=olalond3/docker-cleanup:latest NAME=docker-cleanup
 
 # Allow docker pull to take some time
 TimeoutStartSec=600
